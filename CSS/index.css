@@ -3,13 +3,16 @@
     padding: 15px 15px 15px 15px;
     display: inline-block;
 }
-
+.mobile {
+  display: none;
+}
 body {
     font-family: Europa-bold, Verdana, Geneva, Tahoma, sans-serif;
     background-color: #BFDAD9;
 }
 h1{
     font: 36pt sans-serif;
+    font-weight: 700;
 }
 h2 {
     font: 24pt sans-serif;
@@ -21,7 +24,7 @@ h2 {
     align-items: center;
     margin: none;
     box-shadow: 3px 3px 4px #474747;
-
+    position: fixed;
   }
   
   .topnav a {
@@ -30,7 +33,7 @@ h2 {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 24px;
   }
   
   .topnav a:hover {
@@ -43,6 +46,9 @@ h2 {
   .topnav .icon {
     display: none;
   }
+  .container {
+    height: 100px;
+  }
   .row {
       display: flex;
       margin-left: 100px;
@@ -50,7 +56,6 @@ h2 {
   }
   .column {
       flex: 50%;
-      padding: 10px;
   }
 .column-3 {
   flex: 33%;
@@ -59,7 +64,7 @@ h2 {
 .heroImg {
     width: 100%;
     box-shadow: 3px 3px 4px #474747;
-    
+    margin-top: 30px;
 }
 .copyright {
   font-size: small;
@@ -71,9 +76,32 @@ h2 {
   position: relative; /* Needed to position the cutout text in the middle of the image */
   height: 300px; /* Some height */
   box-shadow: 3px 3px 4px #474747;
-
+}
+.image-container2 {
+  background-image: url("/Images/castleprintweb.jpg"); /* The image used - important! */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative; /* Needed to position the cutout text in the middle of the image */
+  height: 300px; /* Some height */
+  box-shadow: 3px 3px 4px #474747;
+  margin-bottom: 10px;
 }
 
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 3px 3px 4px #474747;
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 3px 8px 16px 0 #474747;
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
 .text {
   background-color: white;
   color: black;
@@ -92,7 +120,7 @@ h2 {
 .flip-card {
     background-color: transparent;
     width: 100%;
-    height:300px;
+    height:200px;
     box-shadow: 3px 3px 4px #474747;
 
   }
@@ -116,7 +144,7 @@ h2 {
   .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 200px;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
   }
@@ -135,41 +163,116 @@ h2 {
     font-size: small;
   }
   section {
-    padding: 5px 0 10px 0;
+    padding: 5px 0 5px 0;
   }
 
 footer {
     background-color: #5775A3;
     padding: 20px 20px 20px 20px;
     color: white;
+    margin-top: 20px;
+}
+.card {
+  height: 255px;
+  background-color: #8FA5C7;
+}
+@media screen and (max-width: 900px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .logo{
+    width: 40%;
+    padding: none;
+  }
+  .card {
+    height: 225px;
+  }
+  
+  .flip {
+    display: none;
+  }
+.container {
+  height: 75px;
+}
+.column {
+    flex: 100%;
+}
+.column-3 {
+  flex: 100%;
+  justify-content: center;
+}
+  .mobile {
+    display: inline;
+    margin-bottom: 10px;
+  }
+  .card-mobile {
+    height: 750px;
+    box-shadow: 3px 3px 4px #474747;
+    transition: 0.3s;
+    margin-top: 10px;
+    background-color: #054159;
+    color: white;
+  }
+  .row {
+    display: inline;
+  }
+  .margin {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 24pt;
+  }
+  h2 {
+    font-size: 18pt;
+  }
+  .image-container {
+    height: 200px;}
+    .image-container2 {
+      height: 200px;
+  }
+  .margin {
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+  .card-mobile {
+    height: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
       display: block;
     }
-    h1 {
-        font-size: medium;
-    }
-    h2 {
-        font-size: small;
-    }
-    .column {
-        flex: 100%;
-    }
-    .column-3 {
-      flex: 100%;
+    .logo{
+      padding: none;
     }
     p {
-      font-size: xx-small;
+      font-size: small;
     }
     .image-container {
       height: 100px;
     }
-    .flip-card .flip-card-back .flip-card-front{
-      display: none;
+    .image-container2 {
+      height: 100px;
+    }
+    .card {
+      height: 185px;
+    }
+    .container {
+      height: 50px;
+    }
+    .flip-card {
+      width: 300px;
+      height: 200px;
+      justify-self: center;
     }
     .topnav.responsive {position: relative;}
     .topnav.responsive a.icon {
@@ -185,7 +288,11 @@ footer {
     .copyright {
       font-size: xx-small;
     }
-    .row {
-      margin: 0;
+
+    .card-mobile {
+      height: 400px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
     }
-  }
+}
+}
